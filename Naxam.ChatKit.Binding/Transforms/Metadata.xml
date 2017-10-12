@@ -1,0 +1,45 @@
+﻿<metadata>
+  <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+  <attr
+    path="/api/package[@name='com.stfalcon.chatkit.dialogs']/class[@name='DialogsListAdapter']"
+    name="managedReturn">Android.Support.V7.Widget.RecyclerView.ViewHolder</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.dialogs']/class[@name='DialogListStyle']"
+      name="visibility">public</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.dialogs']/class[@name='DialogsListAdapter.DialogViewHolder']/method[@name='onBind' and count(parameter)=1 and parameter[1][@type='DIALOG']]"
+      name="managedName">OnBindDialog</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessageInput']"
+      name="managedName">MessageInputControl</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessageHolders.BaseIncomingMessageViewHolder']/method[@name='onBind' and count(parameter)=1 and parameter[1][@type='MESSAGE']]"
+      name="managedName">OnBindMessage</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessageHolders.BaseOutcomingMessageViewHolder']/method[@name='onBind' and count(parameter)=1 and parameter[1][@type='MESSAGE']]"
+      name="managedName">OnBindMessage</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessageHolders.DefaultDateHeaderViewHolder']/method[@name='onBind' and count(parameter)=1 and parameter[1][@type='java.util.Date']]"
+      name="managedName">OnBindMessage</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessagesListAdapter.DefaultDateHeaderViewHolder']/method[@name='onBind' and count(parameter)=1 and parameter[1][@type='java.util.Date']]"
+      name="managedName">OnBindMessage</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.dialogs']/class[@name='DialogsListAdapter']/method[@name='onBindViewHolder' and count(parameter)=2 and parameter[1][@type='com.stfalcon.chatkit.dialogs.DialogsListAdapter.BaseDialogViewHolder'] and parameter[2][@type='int']]"
+      name="managedName">OnBindViewHolderX</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.dialogs']/class[@name='DialogsListAdapter']/method[@name='onCreateViewHolder' and count(parameter)=2 and parameter[1][@type='android.view.ViewGroup'] and parameter[2][@type='int']]"
+      name="managedName">OnCreateViewHolderX</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessagesListAdapter']/method[@name='onBindViewHolder' and count(parameter)=2 and parameter[1][@type='com.stfalcon.chatkit.commons.ViewHolder'] and parameter[2][@type='int']]"
+      name="managedName">OnBindViewHolderX</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessagesListAdapter']/method[@name='onCreateViewHolder' and count(parameter)=2 and parameter[1][@type='android.view.ViewGroup'] and parameter[2][@type='int']]"
+      name="managedName">OnCreateViewHolderX</attr>
+</metadata>
