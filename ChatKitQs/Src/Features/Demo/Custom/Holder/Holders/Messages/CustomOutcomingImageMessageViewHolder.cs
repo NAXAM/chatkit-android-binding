@@ -20,6 +20,7 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Holder.Holders.Messages
         {
 
         }
+        
         public override void OnBind(Java.Lang.Object p0)
         {
             base.OnBind(p0);

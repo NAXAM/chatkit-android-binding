@@ -173,12 +173,6 @@
     <Folder Include="Resources\mipmap-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Naxam.ChatKit.Binding\Naxam.ChatKit.Binding.csproj">
-      <Project>{b0985868-d490-41b9-be61-e01aa911806a}</Project>
-      <Name>Naxam.ChatKit.Binding</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\values\colors.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -360,6 +354,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Naxam.ChatKit.Binding\Naxam.ChatKit.Binding.csproj">
+      <Project>{b0985868-d490-41b9-be61-e01aa911806a}</Project>
+      <Name>Naxam.ChatKit.Binding</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

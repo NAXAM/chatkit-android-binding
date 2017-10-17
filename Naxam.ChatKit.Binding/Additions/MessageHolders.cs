@@ -15,38 +15,41 @@ namespace Com.Stfalcon.Chatkit.Messages
 {
     partial class MessageHolders
     {
-        partial class BaseIncomingMessageViewHolder : Com.Stfalcon.Chatkit.Messages.MessageHolders.BaseMessageViewHolder
-        {
-            public override void OnBind(Java.Lang.Object p0)
-            {
-               
-                OnBindMessage(p0);
-            }
-        }
-
-        partial class IncomingImageMessageViewHolder
-        {
-            public override void OnBindMessage(Java.Lang.Object p0)
-            {
-                base.OnBindMessage(p0);
-                OnBindMessageXX(p0);
-            }
-        }
-
-
-        partial class BaseOutcomingMessageViewHolder : Com.Stfalcon.Chatkit.Messages.MessageHolders.BaseMessageViewHolder
+        partial class BaseIncomingMessageViewHolder
         {
             public override void OnBind(Java.Lang.Object p0)
             {
                 OnBindMessage(p0);
             }
         }
-
-        partial class DefaultDateHeaderViewHolder : Com.Stfalcon.Chatkit.Messages.MessageHolders.IDefaultMessageViewHolder
+        partial class BaseOutcomingMessageViewHolder
         {
             public override void OnBind(Java.Lang.Object p0)
-            { 
+            {
+                OnBindMessage(p0);
+            }
+        }
+        public partial class DefaultDateHeaderViewHolder
+        {
+            public override void OnBind(Java.Lang.Object p0)
+            {
                 OnBindMessage((Java.Util.Date)p0);
+            }
+        }
+        public partial class IncomingImageMessageViewHolder
+        {
+            public override void OnBind(Java.Lang.Object p0)
+            {
+                base.OnBind(p0);
+                OnBindMessage(p0);
+            }
+        }
+        public partial class OutcomingImageMessageViewHolder
+        {
+            public override void OnBind(Java.Lang.Object p0)
+            {
+                base.OnBind(p0);
+                OnBindMessage(p0);
             }
         }
     }

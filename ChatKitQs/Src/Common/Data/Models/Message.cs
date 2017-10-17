@@ -26,9 +26,9 @@ namespace ChatKitQs.Src.Common.Data.Models
 
         public string ImageUrl { get; set; }
 
-        public Image image { get; set; }
+        public Image MessageImage { get; set; }
 
-        public Voice voice { get; set; }
+        public Voice MessageVoice { get; set; }
 
         public string Status => "sent";
 

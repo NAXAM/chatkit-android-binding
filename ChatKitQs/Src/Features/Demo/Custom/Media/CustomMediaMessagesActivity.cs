@@ -18,8 +18,8 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Media
 {
     [Activity(Theme = "@style/BlueTheme")]
     public class CustomMediaMessagesActivity : DemoMessagesActivity,
-        MessageInputControl.IInputListener,
-        MessageInputControl.IAttachmentsListener,
+        MessageInput.IInputListener,
+        MessageInput.IAttachmentsListener,
         MessageHolders.IContentChecker,
         IDialogInterfaceOnClickListener
     {
@@ -41,7 +41,7 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Media
             this.messagesList = FindViewById<MessagesList>(Resource.Id.messagesList);
             InitAdapter();
 
-            MessageInputControl input = FindViewById<MessageInputControl>(Resource.Id.input);
+            MessageInput input = FindViewById<MessageInput>(Resource.Id.input);
             input.SetInputListener(this);
             input.SetAttachmentsListener(this);
         }
@@ -49,8 +49,7 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Media
 
         public bool OnSubmit(ICharSequence input)
         {
-            base.messagesAdapter.AddToStart(
-                    MessagesFixtures.GetTextMessage(input.ToString()), true);
+            base.messagesAdapter.AddToStart(MessagesFixtures.GetTextMessage(input.ToString()), true);
             return true;
         }
 
@@ -83,7 +82,7 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Media
             switch (type)
             {
                 case (sbyte)CONTENT_TYPE_VOICE:
-                    return message.voice != null && !string.IsNullOrEmpty(message.voice.Url);
+                    return message.MessageVoice != null && !string.IsNullOrEmpty(message.MessageVoice.Url);
             }
             return false;
         }
@@ -93,13 +92,13 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Media
                     .RegisterContentType(
                             (sbyte)CONTENT_TYPE_VOICE,
                             Class.FromType(typeof(IncomingVoiceMessageViewHolder)),
-                        Resource.Layout.item_custom_incoming_voice_message,
-                        Class.FromType(typeof(OutcomingVoiceMessageViewHolder)),
-                        Resource.Layout.item_custom_outcoming_voice_message,
-                        this);
+                            Resource.Layout.item_custom_incoming_voice_message,
+                            Class.FromType(typeof(OutcomingVoiceMessageViewHolder)),
+                            Resource.Layout.item_custom_outcoming_voice_message,
+                            this);
 
 
-            base.messagesAdapter = new MessagesListAdapter(base.senderId, holders, base.imageLoader);
+            messagesAdapter = new MessagesListAdapter(base.senderId, holders, base.imageLoader);
             base.messagesAdapter.EnableSelectionMode(this);
             base.messagesAdapter.SetLoadMoreListener(this);
             this.messagesList.SetAdapter(base.messagesAdapter);

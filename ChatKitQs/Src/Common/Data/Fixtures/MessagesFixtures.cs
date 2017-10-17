@@ -31,7 +31,8 @@ namespace ChatKitQs.Src.Common.Data.Fixtures
                 Text = null,
                 CreatedAt = new Date()
             };
-            message.image = new ChatKitQs.Src.Common.Data.Models.Message.Image()
+            message.ImageUrl = GetRandomImage();
+            message.MessageImage = new ChatKitQs.Src.Common.Data.Models.Message.Image()
             {
                 Url = GetRandomImage()
             };
@@ -47,7 +48,7 @@ namespace ChatKitQs.Src.Common.Data.Fixtures
                 Text = null,
                 CreatedAt = new Date()
             };
-            message.voice = new ChatKitQs.Src.Common.Data.Models.Message.Voice()
+            message.MessageVoice = new ChatKitQs.Src.Common.Data.Models.Message.Voice()
             {
                 Url = "http://example.com",
                 Duration = rnd.NextInt(200) + 30

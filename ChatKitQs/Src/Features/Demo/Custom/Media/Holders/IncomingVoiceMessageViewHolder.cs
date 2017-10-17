@@ -30,7 +30,7 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Media.Holders
         {
             base.OnBind(p0);
             var message = (ChatKitQs.Src.Common.Data.Models.Message)p0;
-            tvDuration.Text = FormatUtils.getDurationString(message.voice.Duration);
+            tvDuration.Text = FormatUtils.GetDurationString(message.MessageVoice.Duration);
             tvTime.Text = DateFormatter.Format(message.CreatedAt, DateFormatter.Template.Time);
         }
     }

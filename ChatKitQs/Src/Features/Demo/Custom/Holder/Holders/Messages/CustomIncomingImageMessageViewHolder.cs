@@ -35,5 +35,6 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Holder.Holders.Messages
                 onlineIndicator.SetBackgroundResource(Resource.Drawable.shape_bubble_offline);
             }
         }
+
     }
 }

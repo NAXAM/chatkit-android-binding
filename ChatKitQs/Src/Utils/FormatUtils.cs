@@ -22,12 +22,11 @@ namespace ChatKitQs.Src.Utils
             throw new AssertionError();
         }
 
-        public static string getDurationString(int seconds)
-        {
-            Date date = new Date(seconds * 1000);
-            SimpleDateFormat formatter = new SimpleDateFormat(seconds >= 3600 ? "HH:mm:ss" : "mm:ss");
-            formatter.TimeZone = Java.Util.TimeZone.GetTimeZone("GMT");
-            return formatter.Format(date);
+        public static string GetDurationString(int seconds)
+        { 
+            DateTime posixTime = DateTime.SpecifyKind(new DateTime(1970, 1, 1), DateTimeKind.Utc);
+            DateTime time = posixTime.AddSeconds(seconds);
+            return time.ToString(seconds >= 3600 ? "HH:mm:ss" : "mm:ss");
         }
     }
 }

@@ -15,32 +15,8 @@ using Com.Stfalcon.Chatkit.Commons.Models;
 
 namespace Com.Stfalcon.Chatkit.Dialogs
 {
-    partial class DialogsListAdapter : RecyclerView.Adapter
-    {
-        partial class DialogViewHolder : BaseDialogViewHolder
-        {
-            public override void OnBind(Java.Lang.Object p0)
-            {
-                OnBindDialog(p0);
-            }
-        }
-        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
-        {
-            return OnCreateViewHolderX(parent, viewType);
-        }
-        public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
-        {
-            OnBindViewHolderX((BaseDialogViewHolder)holder, position);
-        }
-    }
-    //partial class DialogsListAdapter
+    //partial class DialogsListAdapter : RecyclerView.Adapter
     //{
-    //    //    : RecyclerView.Adapter
-    //    //{
-    //    //    public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
-    //    //    {
-    //    //        //OnBindViewHolder((Com.Stfalcon.Chatkit.Dialogs.DialogsListAdapter.BaseDialogViewHolder)holder, position);
-    //    //    }
     //    partial class DialogViewHolder : BaseDialogViewHolder
     //    {
     //        public override void OnBind(Java.Lang.Object p0)
@@ -48,5 +24,28 @@ namespace Com.Stfalcon.Chatkit.Dialogs
     //            OnBindDialog(p0);
     //        }
     //    }
+    //    public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
+    //    {
+    //        return OnCreateViewHolderX(parent, viewType);
+    //    }
+    //    public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
+    //    {
+    //        OnBindViewHolderX((BaseDialogViewHolder)holder, position);
+    //    }
     //}
+    public partial class DialogsListAdapter : RecyclerView.Adapter
+    {
+        public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
+        {
+            OnBindViewHolder((Com.Stfalcon.Chatkit.Dialogs.DialogsListAdapter.BaseDialogViewHolder)holder, position);
+        }
+        partial class DialogViewHolder : BaseDialogViewHolder
+        {
+            public override void OnBind(Java.Lang.Object p0)
+            {
+                OnBindDialog(p0);
+            }
+        }
+
+    }
 }

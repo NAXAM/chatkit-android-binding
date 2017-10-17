@@ -20,8 +20,8 @@ namespace ChatKitQs.Src.Features.Demo.Def
 {
     [Activity(Theme = "@style/BlueTheme")]
     public class DefaultMessagesActivity : DemoMessagesActivity,
-        MessageInputControl.IInputListener,
-        MessageInputControl.IAttachmentsListener
+        MessageInput.IInputListener,
+        MessageInput.IAttachmentsListener
     {
         public static void Open(Context context)
         {
@@ -39,7 +39,7 @@ namespace ChatKitQs.Src.Features.Demo.Def
             this.messagesList = FindViewById<MessagesList>(Resource.Id.messagesList);
             InitAdapter();
 
-            MessageInputControl input = FindViewById<MessageInputControl>(Resource.Id.input);
+            MessageInput input = FindViewById<MessageInput>(Resource.Id.input);
             input.SetInputListener(this);
         }
 

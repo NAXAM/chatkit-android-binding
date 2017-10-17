@@ -15,7 +15,7 @@ using Java.Lang;
 
 namespace Com.Stfalcon.Chatkit.Messages
 {
-    partial class MessagesListAdapter : Android.Support.V7.Widget.RecyclerView.Adapter
+    public partial class MessagesListAdapter : global::Android.Support.V7.Widget.RecyclerView.Adapter
     {
         partial class DefaultDateHeaderViewHolder : ViewHolder, MessageHolders.IDefaultMessageViewHolder
         {
@@ -25,13 +25,8 @@ namespace Com.Stfalcon.Chatkit.Messages
             }
         }
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
-        {
-            OnBindViewHolderX((ViewHolder)holder,position);
-        }
-
-        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
-        {
-            return OnCreateViewHolderX(parent, viewType);
+        { 
+            OnBindViewHolder((Com.Stfalcon.Chatkit.Commons.ViewHolder)holder, position);
         }
     }
 }
