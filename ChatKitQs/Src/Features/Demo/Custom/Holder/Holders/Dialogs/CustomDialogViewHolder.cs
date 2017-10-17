@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Com.Stfalcon.Chatkit.Dialogs;
 using Java.Lang;
+using ChatKitQs.Src.Common.Data.Models;
 
 namespace ChatKitQs.Src.Features.Demo.Custom.Holder.Holders.Dialogs
 {
@@ -32,7 +33,7 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Holder.Holders.Dialogs
             }
             else
             {
-                bool isOnline = dialog.Users[0].Online;
+                bool isOnline = ((User)dialog.Users[0]).Online;
                 onlineIndicator.Visibility = ViewStates.Visible;
                 if (isOnline)
                 {

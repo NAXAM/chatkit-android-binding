@@ -19,6 +19,7 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Layout
     [Activity(Theme = "@style/BlueTheme")]
     public class CustomLayoutMessagesActivity : DemoMessagesActivity,
         MessagesListAdapter.IOnMessageLongClickListener,
+        MessagesListAdapter.IOnMessageClickListener,
         MessageInputControl.IInputListener,
         MessageInputControl.IAttachmentsListener
     {
@@ -58,6 +59,13 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Layout
         }
 
 
+
+        public void OnMessageLongClick(Java.Lang.Object p0)
+        {
+            AppUtils.ShowToast(this, Resource.String.on_log_click_message, false);
+        }
+
+
         private void InitAdapter()
         {
             MessageHolders holdersConfig = new MessageHolders()
@@ -68,13 +76,14 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Layout
 
             base.messagesAdapter = new MessagesListAdapter(base.senderId, holdersConfig, base.imageLoader);
             base.messagesAdapter.SetOnMessageLongClickListener(this);
+            base.messagesAdapter.SetOnMessageClickListener(this);
             base.messagesAdapter.SetLoadMoreListener(this);
             messagesList.SetAdapter(base.messagesAdapter);
         }
 
-        public void OnMessageLongClick(Java.Lang.Object p0)
+        public void OnMessageClick(Java.Lang.Object p0)
         {
-            AppUtils.ShowToast(this, Resource.String.on_log_click_message, false);
+
         }
     }
 }

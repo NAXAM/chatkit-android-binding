@@ -37,7 +37,7 @@ namespace ChatKitQs.Src.Features.Demo.Def
         }
 
 
-        public void OnDialogClick(Dialog dialog)
+        public override void OnDialogClick(Java.Lang.Object dialog)
         {
             DefaultMessagesActivity.Open(this);
         }
@@ -48,8 +48,8 @@ namespace ChatKitQs.Src.Features.Demo.Def
             base.dialogsAdapter.SetItems(DialogsFixtures.GetDialogs());
 
             base.dialogsAdapter.SetOnDialogLongClickListener(this);
-            base.dialogsAdapter.SetOnDialogLongClickListener(this);
-
+            base.dialogsAdapter.OnDialogClickListener = this;
+            base.dialogsAdapter.ImageLoader = base.imageLoader;
             dialogsList.SetAdapter(base.dialogsAdapter);
         }
 

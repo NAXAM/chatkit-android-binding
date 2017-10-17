@@ -16,18 +16,16 @@ namespace ChatKitQs.Src.Common.Data.Models
 {
     public class Dialog : Java.Lang.Object, IDialog
     {
+        public string Id { get; set; }
+
         public string DialogName { get; set; }
 
         public string DialogPhoto { get; set; }
 
-        public string Id { get; set; }
-
         public Java.Lang.Object LastMessage { get; set; }
 
         public int UnreadCount { get; set; }
-
-        public List<User> Users { get; set; }
-
-        IList<IUser> IDialog.Users => throw new NotImplementedException();
+        
+        public IList<IUser> Users { get; set; }
     }
 }

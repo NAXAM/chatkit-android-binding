@@ -36,7 +36,7 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Holder
         }
 
 
-        public void onDialogClick(Dialog dialog)
+        public override void OnDialogClick(Java.Lang.Object p0)
         {
             CustomHolderMessagesActivity.Open(this);
         }
@@ -44,12 +44,12 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Holder
         private void InitAdapter()
         {
             base.dialogsAdapter = new DialogsListAdapter(Resource.Layout.item_custom_dialog_view_holder, Java.Lang.Class.FromType(typeof(CustomDialogViewHolder)), base.imageLoader);
-
+            
             base.dialogsAdapter.SetItems(DialogsFixtures.GetDialogs());
 
             base.dialogsAdapter.SetOnDialogLongClickListener(this);
-            base.dialogsAdapter.SetOnDialogLongClickListener(this);
-
+            base.dialogsAdapter.OnDialogClickListener = this;
+            base.dialogsAdapter.ImageLoader = base.imageLoader;
             dialogsList.SetAdapter(base.dialogsAdapter);
         }
     }

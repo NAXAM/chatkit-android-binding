@@ -57,8 +57,8 @@
       <HintPath>..\packages\Karamunting.Android.Ongakuer.CircleIndicator.1.2.2\lib\monoandroid71\CircleIndicator.dll</HintPath>
     </Reference>
     <Reference Include="Java.Interop" />
-    <Reference Include="Naxam.FlexBox.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Naxam.Flexbox.Droid.0.2.5\lib\MonoAndroid10\Naxam.FlexBox.Droid.dll</HintPath>
+    <Reference Include="Naxam.Flexbox.Droid, Version=0.2.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Naxam.Flexbox.Droid.0.2.5.1\lib\MonoAndroid10\Naxam.Flexbox.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Naxam.ShapeImageView.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Naxam.ShapeImageView.Droid.0.9.3\lib\MonoAndroid10\Naxam.ShapeImageView.Droid.dll</HintPath>
@@ -147,6 +147,7 @@
     <Compile Include="Src\Features\Demo\Def\DefaultMessagesActivity.cs" />
     <Compile Include="Src\Features\Demo\DemoDialogsActivity.cs" />
     <Compile Include="Src\Features\Demo\DemoMessagesActivity.cs" />
+    <Compile Include="Src\Features\Demo\ImageLoader.cs" />
     <Compile Include="Src\Features\Demo\Styled\StyledDialogsActivity.cs" />
     <Compile Include="Src\Features\Demo\Styled\StyledMessagesActivity.cs" />
     <Compile Include="Src\Features\Main\Adapter\DemoCardFragment.cs" />

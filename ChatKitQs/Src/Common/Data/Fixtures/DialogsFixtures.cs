@@ -12,6 +12,7 @@ using Android.Widget;
 using Java.Lang;
 using Java.Util;
 using ChatKitQs.Src.Common.Data.Models;
+using Com.Stfalcon.Chatkit.Commons.Models;
 
 namespace ChatKitQs.Src.Common.Data.Fixtures
 {
@@ -40,32 +41,32 @@ namespace ChatKitQs.Src.Common.Data.Fixtures
 
         public static Models.Dialog GetDialog(int i, Date lastMessageCreatedAt)
         {
-            List<User> users = getUsers();
+            IList<IUser> users = GetUsers();
             return new Models.Dialog()
             {
                 Id = GetRandomId(),
                 DialogName = users.Count > 1 ? groupChatTitles[users.Count - 2] : users[0].Name,
                 DialogPhoto = users.Count > 1 ? groupChatImages[users.Count - 2] : GetRandomAvatar(),
                 Users = users,
-                LastMessage = getMessage(lastMessageCreatedAt),
+                LastMessage = GetMessage(lastMessageCreatedAt),
                 UnreadCount = i < 3 ? 3 - i : 0
             };
         }
 
-        public static List<User> getUsers()
+        public static IList<IUser> GetUsers()
         {
-            List<User> users = new List<User>();
+            List<IUser> users = new List<IUser>();
             int usersCount = 1 + rnd.NextInt(4);
 
             for (int i = 0; i < usersCount; i++)
             {
-                users.Add(getUser());
+                users.Add(GetUser());
             }
 
             return users;
         }
 
-        public static User getUser()
+        public static User GetUser()
         {
             return new User()
             {
@@ -76,12 +77,12 @@ namespace ChatKitQs.Src.Common.Data.Fixtures
             };
         }
 
-        public static Models.Message getMessage(Date date)
+        public static Models.Message GetMessage(Date date)
         {
             return new Models.Message()
             {
                 Id = GetRandomId(),
-                User = getUser(),
+                User = GetUser(),
                 Text = GetRandomMessage(),
                 CreatedAt = date
             };

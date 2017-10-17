@@ -28,11 +28,12 @@ namespace ChatKitQs.Src.Common.Data.Fixtures
             {
                 Id = GetRandomId(),
                 User = GetUser(),
-                Text = null
+                Text = null,
+                CreatedAt = new Date()
             };
             message.image = new ChatKitQs.Src.Common.Data.Models.Message.Image()
             {
-                url = GetRandomImage()
+                Url = GetRandomImage()
             };
             return message;
         }
@@ -43,12 +44,13 @@ namespace ChatKitQs.Src.Common.Data.Fixtures
             {
                 Id = GetRandomId(),
                 User = GetUser(),
-                Text = null
+                Text = null,
+                CreatedAt = new Date()
             };
             message.voice = new ChatKitQs.Src.Common.Data.Models.Message.Voice()
             {
-                url = "http://example.com",
-                duration = rnd.NextInt(200) + 30
+                Url = "http://example.com",
+                Duration = rnd.NextInt(200) + 30
             };
             return message;
         }
@@ -64,7 +66,8 @@ namespace ChatKitQs.Src.Common.Data.Fixtures
             {
                 Id = GetRandomId(),
                 User = GetUser(),
-                Text = null
+                Text = text,
+                CreatedAt = new Date()
             };
         }
 

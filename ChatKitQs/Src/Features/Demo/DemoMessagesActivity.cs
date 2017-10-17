@@ -22,7 +22,7 @@ using Java.Text;
 
 namespace ChatKitQs.Src.Features.Demo
 {
-    public class DemoMessagesActivity : AppCompatActivity, MessagesListAdapter.ISelectionListener, MessagesListAdapter.IOnLoadMoreListener
+    public abstract class DemoMessagesActivity : AppCompatActivity, MessagesListAdapter.ISelectionListener, MessagesListAdapter.IOnLoadMoreListener
     {
         private static int TOTAL_MESSAGES_COUNT = 100;
 
@@ -38,13 +38,7 @@ namespace ChatKitQs.Src.Features.Demo
         {
             base.OnCreate(savedInstanceState);
 
-            imageLoader = new ImageLoader()
-            {
-                LoadImageCommand = (imageView, url) =>
-                {
-                    Picasso.With(this).Load(url).Into(imageView);
-                }
-            };
+            imageLoader = new ImageLoader();
         }
 
 
@@ -145,14 +139,6 @@ namespace ChatKitQs.Src.Features.Demo
                 return string.Format("%s: %s (%s)",
                         message.User.Name, text, createdAt);
             }
-        }
-    }
-    public class ImageLoader : Java.Lang.Object, IImageLoader
-    {
-        public Action<ImageView, string> LoadImageCommand { get; set; }
-        public void LoadImage(ImageView p0, string p1)
-        {
-            LoadImageCommand?.Invoke(p0, p1);
         }
     }
 }

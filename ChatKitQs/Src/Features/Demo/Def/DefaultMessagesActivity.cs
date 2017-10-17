@@ -14,6 +14,7 @@ using Java.Lang;
 using ChatKitQs.Src.Common.Data.Fixtures;
 using ChatKitQs.Src.Utils;
 using ChatKitQs.Src.Common.Data.Models;
+using static Com.Stfalcon.Chatkit.Messages.MessageHolders;
 
 namespace ChatKitQs.Src.Features.Demo.Def
 {
@@ -62,6 +63,7 @@ namespace ChatKitQs.Src.Features.Demo.Def
             base.messagesAdapter = new MessagesListAdapter(base.senderId, base.imageLoader);
             base.messagesAdapter.EnableSelectionMode(this);
             base.messagesAdapter.SetLoadMoreListener(this);
+            
             base.messagesAdapter.RegisterViewClickListener(Resource.Id.messageUserAvatar, new OnMessageViewClickListener()
             {
                 MessageViewClickCommand = (view, message) =>

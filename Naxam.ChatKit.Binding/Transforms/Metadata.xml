@@ -21,9 +21,11 @@
   <attr
       path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessageHolders.BaseIncomingMessageViewHolder']/method[@name='onBind' and count(parameter)=1 and parameter[1][@type='MESSAGE']]"
       name="managedName">OnBindMessage</attr>
+
+  <attr path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessageHolders.IncomingImageMessageViewHolder']/method[@name='onBind' and count(parameter)=1 and parameter[1][@type='MESSAGE']]"  name="managedName">OnBindMessageXX</attr>
   <attr
-      path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessageHolders.BaseOutcomingMessageViewHolder']/method[@name='onBind' and count(parameter)=1 and parameter[1][@type='MESSAGE']]"
-      name="managedName">OnBindMessage</attr>
+    path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessageHolders.BaseOutcomingMessageViewHolder']/method[@name='onBind' and count(parameter)=1 and parameter[1][@type='MESSAGE']]"
+    name="managedName">OnBindMessage</attr>
   <attr
       path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessageHolders.DefaultDateHeaderViewHolder']/method[@name='onBind' and count(parameter)=1 and parameter[1][@type='java.util.Date']]"
       name="managedName">OnBindMessage</attr>
@@ -42,4 +44,13 @@
   <attr
       path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessagesListAdapter']/method[@name='onCreateViewHolder' and count(parameter)=2 and parameter[1][@type='android.view.ViewGroup'] and parameter[2][@type='int']]"
       name="managedName">OnCreateViewHolderX</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessageHolders.BaseMessageViewHolder']/method[@name='getImageLoader' and count(parameter)=0]"
+      name="managedName">ImageLoaderXss</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessagesListAdapter.BaseMessageViewHolder']/field[@name='imageLoader']"
+      name="visibility">public</attr>
+  <attr
+      path="/api/package[@name='com.stfalcon.chatkit.messages']/class[@name='MessagesListAdapter.BaseMessageViewHolder']/field[@name='imageLoader']"
+      name="visibility">public</attr>
 </metadata>

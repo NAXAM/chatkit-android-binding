@@ -19,9 +19,20 @@ namespace Com.Stfalcon.Chatkit.Messages
         {
             public override void OnBind(Java.Lang.Object p0)
             {
+               
                 OnBindMessage(p0);
             }
         }
+
+        partial class IncomingImageMessageViewHolder
+        {
+            public override void OnBindMessage(Java.Lang.Object p0)
+            {
+                base.OnBindMessage(p0);
+                OnBindMessageXX(p0);
+            }
+        }
+
 
         partial class BaseOutcomingMessageViewHolder : Com.Stfalcon.Chatkit.Messages.MessageHolders.BaseMessageViewHolder
         {
@@ -34,7 +45,7 @@ namespace Com.Stfalcon.Chatkit.Messages
         partial class DefaultDateHeaderViewHolder : Com.Stfalcon.Chatkit.Messages.MessageHolders.IDefaultMessageViewHolder
         {
             public override void OnBind(Java.Lang.Object p0)
-            {
+            { 
                 OnBindMessage((Java.Util.Date)p0);
             }
         }

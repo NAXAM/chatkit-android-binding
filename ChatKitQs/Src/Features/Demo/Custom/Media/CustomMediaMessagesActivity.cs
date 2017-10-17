@@ -63,9 +63,9 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Media
         }
 
 
-        public void OnClick(DialogInterface dialogInterface, int i)
+        public void OnClick(IDialogInterface dialog, int which)
         {
-            switch (i)
+            switch (which)
             {
                 case 0:
                     messagesAdapter.AddToStart(MessagesFixtures.GetImageMessage(), true);
@@ -76,6 +76,17 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Media
             }
         }
 
+        public bool HasContentFor(Java.Lang.Object p0, sbyte p1)
+        {
+            var type = (sbyte)p1;
+            var message = (ChatKitQs.Src.Common.Data.Models.Message)p0;
+            switch (type)
+            {
+                case (sbyte)CONTENT_TYPE_VOICE:
+                    return message.voice != null && !string.IsNullOrEmpty(message.voice.Url);
+            }
+            return false;
+        }
         private void InitAdapter()
         {
             MessageHolders holders = new MessageHolders()
@@ -92,26 +103,6 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Media
             base.messagesAdapter.EnableSelectionMode(this);
             base.messagesAdapter.SetLoadMoreListener(this);
             this.messagesList.SetAdapter(base.messagesAdapter);
-        }
-
-
-
-        public void OnClick(IDialogInterface dialog, int which)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool HasContentFor(Java.Lang.Object p0, sbyte p1)
-        {
-            var type = (sbyte)p1;
-            var message = (ChatKitQs.Src.Common.Data.Models.Message)p0;
-            switch (type)
-            {
-                case (sbyte)CONTENT_TYPE_VOICE:
-                    return message.voice != null
-                            && !string.IsNullOrEmpty(message.voice.url);
-            }
-            return false;
         }
     }
 }

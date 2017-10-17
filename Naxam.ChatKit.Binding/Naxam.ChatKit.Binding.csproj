@@ -38,9 +38,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
-    <Reference Include="Naxam.Flexbox.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\FlexBox\Naxam.Flexbox.Droid\bin\Release\Naxam.Flexbox.Droid.dll</HintPath>
+    <Reference Include="Naxam.Flexbox.Droid, Version=0.2.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Naxam.Flexbox.Droid.0.2.5.1\lib\MonoAndroid10\Naxam.Flexbox.Droid.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

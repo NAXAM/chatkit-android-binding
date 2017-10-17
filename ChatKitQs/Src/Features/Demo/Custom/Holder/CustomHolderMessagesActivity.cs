@@ -59,6 +59,11 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Holder
         }
 
 
+        public void OnMessageLongClick(Java.Lang.Object p0)
+        {
+            AppUtils.ShowToast(this, Resource.String.on_log_click_message, false);
+        }
+
         private void InitAdapter()
         {
             MessageHolders holdersConfig = new MessageHolders()
@@ -79,11 +84,6 @@ namespace ChatKitQs.Src.Features.Demo.Custom.Holder
             base.messagesAdapter.SetOnMessageLongClickListener(this);
             base.messagesAdapter.SetLoadMoreListener(this);
             messagesList.SetAdapter(base.messagesAdapter);
-        }
-
-        public void OnMessageLongClick(Java.Lang.Object p0)
-        {
-            AppUtils.ShowToast(this, Resource.String.on_log_click_message, false);
         }
     }
 }

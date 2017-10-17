@@ -37,7 +37,7 @@ namespace ChatKitQs.Src.Features.Demo.Styled
         }
 
 
-        public void onDialogClick(Dialog dialog)
+        public override void OnDialogClick(Java.Lang.Object dialog)
         {
             StyledMessagesActivity.Open(this);
         }
@@ -69,9 +69,9 @@ namespace ChatKitQs.Src.Features.Demo.Styled
             base.dialogsAdapter.SetItems(DialogsFixtures.GetDialogs());
 
             base.dialogsAdapter.SetOnDialogLongClickListener(this);
-            base.dialogsAdapter.SetOnDialogLongClickListener(this);
+            base.dialogsAdapter.OnDialogClickListener = this;
             base.dialogsAdapter.SetDatesFormatter(this);
-
+            base.dialogsAdapter.ImageLoader = base.imageLoader;
             dialogsList.SetAdapter(base.dialogsAdapter);
         }
     }

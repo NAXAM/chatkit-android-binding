@@ -14,7 +14,7 @@ using Java.Util;
 
 namespace ChatKitQs.Src.Common.Data.Models
 {
-    public class Message :Java.Lang.Object, IMessage, IMessageContentTypeImage, IMessageContentType
+    public class Message : Java.Lang.Object, IMessage, IMessageContentTypeImage, IMessageContentType
     {
         public Date CreatedAt { get; set; }
 
@@ -23,23 +23,24 @@ namespace ChatKitQs.Src.Common.Data.Models
         public string Text { get; set; }
 
         public IUser User { get; set; }
-         
 
         public string ImageUrl { get; set; }
 
+        public Image image { get; set; }
+
         public Voice voice { get; set; }
 
-        public Image image { get; set; }
         public string Status => "sent";
-         
+
         public class Image
         {
-            public string url { get; set; }
+            public string Url { get; set; }
         }
+
         public class Voice
         {
-            public string url { get; set; }
-            public int duration { get; set; }
+            public string Url { get; set; }
+            public int Duration { get; set; }
         }
     }
 }
