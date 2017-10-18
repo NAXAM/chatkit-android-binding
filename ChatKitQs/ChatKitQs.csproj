@@ -356,9 +356,9 @@
     <AndroidResource Include="Resources\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Naxam.ChatKit.Binding\Naxam.ChatKit.Binding.csproj">
-      <Project>{b0985868-d490-41b9-be61-e01aa911806a}</Project>
-      <Name>Naxam.ChatKit.Binding</Name>
+    <ProjectReference Include="..\Naxam.ChatKit.Droid\Naxam.ChatKit.Droid.csproj">
+      <Project>{8d7bccc8-5f63-445e-a732-c68f9f0d0eac}</Project>
+      <Name>Naxam.ChatKit.Droid</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
